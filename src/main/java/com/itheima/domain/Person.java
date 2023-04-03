@@ -1,4 +1,4 @@
-package com.itheima;
+package com.itheima.domain;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

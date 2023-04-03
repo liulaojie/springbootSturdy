@@ -1,9 +1,12 @@
 package com.itheima;
 
+import com.itheima.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -14,16 +17,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class userServiceTest {
 
     @Autowired
-    private userService userService;
+    private com.itheima.service.userService userService;
     @Autowired
     private RedisTemplate redisTemplate;
-
+    @Autowired
+    private UserMapper userMapper;
 
     @Test
     public void testAdd(){
         userService.add();
     }
 
+    /**
+     * 测试Redis的存入和读取
+     */
     @Test
     public void testSet(){
         //存入数据
@@ -34,5 +41,12 @@ public class userServiceTest {
         //获取数据
         Object name = redisTemplate.boundValueOps("name").get();
         System.out.println(name);
+    }
+    /**
+     * 测试mybatis的读取
+     */
+    @Test
+    public void testFindAll(){
+        System.out.println(userMapper);
     }
 }

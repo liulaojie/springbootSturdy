@@ -1,4 +1,9 @@
----
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookstore
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+
 #yaml大小写敏感
 #缩进只能用空格，层级只要左对齐即可
 server:
@@ -9,36 +14,37 @@ name: abc
 person:
   name: zhangsan
   age: 30
-person2: {name: zhangsan,age: 20}
+person2: { name: zhangsan,age: 20 }
 person3:
   name: ${name} #引用上面定义的值
 #数组数据格式
 address:
   - beijing
   - shanghai
-address2: [beijing,shanghai]
+address2: [ beijing,shanghai ]
 #纯量
 msg1: 'hello \n world'  #单引号忽略转义字符
 msg2: "hello \n world"  #双引号识别转义字符
-#profile的应用(yaml多文档方式配置profile)
-spring:
-  profiles: study
----
-server:
-  port: 8084
-spring:
-  profiles: dev
----
-server:
-  port: 8085
-  spring:
-    profiles: test
----
-server:
-  port: 8086
-  spring:
-    profiles: pro
----
-spring:
-  profiles:
-    active: study
+#    #profile的应用(yaml多文档方式配置profile)
+#    spring:
+#      profiles: study
+#    ---
+#    server:
+#      port: 8084
+#    spring:
+#      profiles: dev
+#    ---
+#    server:
+#      port: 8085
+#      spring:
+#        profiles: test
+#    ---
+#    server:
+#      port: 8086
+#      spring:
+#        profiles: pro
+#    ---
+#    spring:
+#      profiles:
+#        active: study
+
