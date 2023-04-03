@@ -15,9 +15,24 @@ public class userServiceTest {
 
     @Autowired
     private userService userService;
+    @Autowired
+    private RedisTemplate redisTemplate;
+
 
     @Test
     public void testAdd(){
         userService.add();
+    }
+
+    @Test
+    public void testSet(){
+        //存入数据
+        redisTemplate.boundValueOps("name").set("zhangsan");
+    }
+    @Test
+    public void testGet(){
+        //获取数据
+        Object name = redisTemplate.boundValueOps("name").get();
+        System.out.println(name);
     }
 }
