@@ -1,2 +1,20 @@
+#yaml大小写敏感
+#缩进只能用空格，层级只要左对齐即可
 server:
   port: 8082
+
+name: abc
+#对象数据格式
+person:
+  name: zhangsan
+person2: {name: zhangsan,age: 20}
+person3:
+  name: ${name} #引用上面定义的值
+#数组数据格式
+address:
+  - beijing
+  - shanghai
+address2: [beijing,shanghai]
+#纯量
+msg1: 'hello \n world'  #单引号忽略转义字符
+msg2: "hello \n world"  #双引号识别转义字符
