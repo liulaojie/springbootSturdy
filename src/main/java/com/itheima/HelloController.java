@@ -33,14 +33,14 @@ public class HelloController {
      */
     @RequestMapping("/getArg")
     public String getArg (){
-        System.out.println(name1);
-        System.out.println(address);
-        System.out.println(msg1);
-        System.out.println(msg2);
-        System.out.println("-----------");
-        System.out.println(environment.getProperty("name"));
-        System.out.println("-----------");
-        System.out.println(person.toString());
+//        System.out.println(name1);
+//        System.out.println(address);
+//        System.out.println(msg1);
+//        System.out.println(msg2);
+//        System.out.println("-----------");
+//        System.out.println(environment.getProperty("name"));
+//        System.out.println("-----------");
+//        System.out.println(person.toString());
         return  "";
     }
 

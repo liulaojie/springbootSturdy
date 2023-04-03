@@ -41,4 +41,4 @@ server:
 ---
 spring:
   profiles:
-    active: test
+    active: study
