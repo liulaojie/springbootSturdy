@@ -1,3 +1,4 @@
+---
 #yaml大小写敏感
 #缩进只能用空格，层级只要左对齐即可
 server:
@@ -19,3 +20,25 @@ address2: [beijing,shanghai]
 #纯量
 msg1: 'hello \n world'  #单引号忽略转义字符
 msg2: "hello \n world"  #双引号识别转义字符
+#profile的应用(yaml多文档方式配置profile)
+spring:
+  profiles: study
+---
+server:
+  port: 8084
+spring:
+  profiles: dev
+---
+server:
+  port: 8085
+  spring:
+    profiles: test
+---
+server:
+  port: 8086
+  spring:
+    profiles: pro
+---
+spring:
+  profiles:
+    active: test
