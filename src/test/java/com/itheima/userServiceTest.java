@@ -1,10 +1,8 @@
 package com.itheima;
 
-import com.itheima.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -21,7 +19,6 @@ public class userServiceTest {
     @Autowired
     private RedisTemplate redisTemplate;
     @Autowired
-    private UserMapper userMapper;
 
     @Test
     public void testAdd(){
@@ -42,11 +39,5 @@ public class userServiceTest {
         Object name = redisTemplate.boundValueOps("name").get();
         System.out.println(name);
     }
-    /**
-     * 测试mybatis的读取
-     */
-    @Test
-    public void testFindAll(){
-        System.out.println(userMapper);
-    }
+
 }
